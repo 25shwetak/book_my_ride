@@ -1,0 +1,32 @@
+<html>
+<style>
+  table, th, td {
+  border: 1px solid black;
+}
+</style>
+<center>
+  <h1>Rides</h1>
+  <body>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+        <th>Driver Name</th>
+        <th>Request Count</th>
+        <th>View Requests</th>
+      </tr>
+      <% @rides.each do |ride| %>
+      <tr>
+        <td><%= ride.date %></td>
+        <td><%= ride.time.strftime("%I:%M%p") %></td>
+        <td><%= ride.location %></td>
+        <td><%= ride.driver.first_name + ride.driver.last_name%></td>
+        <td><%= ride.ride_requests.count %></td>
+        <td><%= link_to 'View Requests', ride_ride_requests_path(ride)%></td>
+      </tr>
+      <% end %>
+    </table>
+  </body>
+</center>
+</html>
