@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Ride < ApplicationRecord
   has_many :ride_requests
 
