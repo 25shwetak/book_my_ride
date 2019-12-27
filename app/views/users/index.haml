@@ -1,0 +1,18 @@
+:css
+  table, th, td {
+    border: 1px solid black;
+  }
+
+%body
+  %center
+    %h1 Users
+    %table
+      %tr
+        %th Name
+        %th Contact Number
+        %th Email
+      - @users.each do |user|
+        %tr
+          %td= user.first_name + user.last_name
+          %td= user.contact_number
+          %td= user.email

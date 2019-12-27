@@ -14,6 +14,7 @@
         %th Driver Name
         %th Request Count
         %th View Requests
+        %th Book Rides
       - @rides.each do |ride|
         %tr
           %td= ride.date
@@ -22,3 +23,12 @@
           %td= ride.driver.first_name + ride.driver.last_name
           %td= ride.ride_requests.count
           %td= link_to 'View Requests', ride_ride_requests_path(ride)
+          %td= link_to 'Book Ride', new_ride_ride_request_path(ride)
+    %br
+    %br
+    %a(href="/users/new")
+      %button Create New Request
+    %br
+    %br
+    %a(href="/users")
+      %button Show All Users

@@ -9,7 +9,9 @@
       %tr
         %th User Name
         %th Status
+        %th Destination
       - @requests.each do |request|
         %tr
-          %td= request.user.first_name
+          %td= request.user.first_name + request.user.last_name
           %td= request.status
+          %td= request.destination

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :ride_requests
   end
   resources :users
+  resources :ride_requests
 end

@@ -1,6 +1,24 @@
-= form_with(url: "/rides", method: "POST") do
-  = label_tag(:first_name, "First Name")
-  = text_field_tag(:first_name)
-  = label_tag(:last_name, "Last Name")
-  = text_field_tag(:last_name)
-  = submit_tag("Submit")
+%center
+  %h1 Fill Your Details
+  = form_with(url: "/users", method: "POST") do
+    = label_tag(:first_name, "First Name")
+    = text_field_tag(:first_name)
+    %br
+    %br
+    = label_tag(:last_name, "Last Name")
+    = text_field_tag(:last_name)
+    %br
+    %br
+    = label_tag(:contact_number, "Contact Number")
+    = text_field_tag(:contact_number)
+    %br
+    %br
+    = label_tag(:email, "Email")
+    = text_field_tag(:email)
+    %br
+    %br
+    = label_tag(:password, "Password")
+    = password_field_tag(:password)
+    %br
+    %br
+    = submit_tag("Submit")
