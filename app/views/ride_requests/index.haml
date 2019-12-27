@@ -1,8 +1,15 @@
-%table
-  %tr
-    %th User Name
-    %th Status
-  - @requests.each do |request|
-    %tr
-      %td= request.user.first_name
-      %td= request.status
+%center
+  %h1 Ride Requests
+  :css
+    table, th, td {
+      border: 1px solid black;
+    }
+  %body
+    %table
+      %tr
+        %th User Name
+        %th Status
+      - @requests.each do |request|
+        %tr
+          %td= request.user.first_name
+          %td= request.status
