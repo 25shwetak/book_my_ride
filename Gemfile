@@ -65,5 +65,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'haml', '~> 5.1', '>= 5.1.2'
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
