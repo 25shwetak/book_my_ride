@@ -1,34 +1,26 @@
-:css
-  table, th, td {
-    border: 1px solid black;
-  }
-
-%body
-  %center
-    %h1 Rides
-    %table
-      %tr
-        %th Date
-        %th Time
-        %th Location
-        %th Driver Name
-        %th Request Count
-        %th View Requests
-        %th Book Rides
-      - @rides.each do |ride|
+.container
+  %body
+    %center
+      %h1 Rides
+      %table.table
         %tr
-          %td= ride.date
-          %td= ride.time.strftime("%I:%M%p")
-          %td= ride.location
-          %td= ride.driver.first_name + ride.driver.last_name
-          %td= ride.ride_requests.count
-          %td= link_to 'View Requests', ride_ride_requests_path(ride)
-          %td= link_to 'Book Ride', new_ride_ride_request_path(ride)
-    %br
-    %br
-    %a(href="/users/new")
-      %button Create New Request
-    %br
-    %br
-    %a(href="/users")
-      %button Show All Users
+          %th.text-center Date
+          %th.text-center Time
+          %th.text-center Location
+          %th.text-center Driver Name
+          %th.text-center Request Count
+          %th.text-center View Requests
+          %th.text-center Book Rides
+        - @rides.each do |ride|
+          %tr
+            %td.text-center= ride.date
+            %td.text-center= ride.time.strftime("%I:%M%p")
+            %td.text-center= ride.location
+            %td.text-center= ride.driver.first_name + ride.driver.last_name
+            %td.text-center= ride.ride_requests.count
+            %td.text-center= link_to 'View Requests', ride_ride_requests_path(ride)
+            %td.text-center= link_to 'Book Ride', new_ride_ride_request_path(ride)
+      %br
+      %br
+      %a(href="/users")
+        %button Show All Users

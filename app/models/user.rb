@@ -9,7 +9,8 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ApplicationRecord
-  has_many :ride_request
+  has_many :ride_requests
+  has_secure_password
 
   validates :first_name, :last_name, :contact_number, :email, presence: true
   validates :contact_number, uniqueness: true, length: { is: 10 }

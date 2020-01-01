@@ -1,17 +1,14 @@
-%center
-  %h1 Ride Requests
-  :css
-    table, th, td {
-      border: 1px solid black;
-    }
-  %body
-    %table
-      %tr
-        %th User Name
-        %th Status
-        %th Destination
-      - @requests.each do |request|
+.container
+  %center
+    %h1 Ride Requests
+    %body
+      %table.table
         %tr
-          %td= request.user.first_name + request.user.last_name
-          %td= request.status
-          %td= request.destination
+          %th.text-center User Name
+          %th.text-center Status
+          %th.text-center Destination
+        - @requests.each do |request|
+          %tr
+            %td.text-center= request.user.first_name + request.user.last_name
+            %td.text-center= request.status
+            %td.text-center= request.destination

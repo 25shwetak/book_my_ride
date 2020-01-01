@@ -1,14 +1,6 @@
 %center
   %h1 Create New Ride Request
   = form_with(url: "/ride_requests", method: "POST") do
-    = label_tag(:email, "Email")
-    = text_field_tag(:email)
-    %br
-    %br
-    = label_tag(:password, "Password")
-    = password_field_tag(:password)
-    %br
-    %br
     = label_tag(:destination, "Destination")
     = text_field_tag(:destination)
     %br

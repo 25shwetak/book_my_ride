@@ -11,8 +11,7 @@ class RideRequestsController < ApplicationController
   end
 
   def create
-    obj = User.find_by(email: params["email"])
-    RideRequest.create(destination: params["destination"], status: "Booked", user_id: obj.id, ride_id: @@rideid)
+    RideRequest.create(destination: params["destination"], status: "Booked", user_id: session[:user_id], ride_id: @@rideid)
     redirect_to rides_path
   end
 end
